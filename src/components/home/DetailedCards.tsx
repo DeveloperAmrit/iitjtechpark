@@ -19,7 +19,7 @@ const GlobalImpactSection: React.FC = () => {
         <div className="flex flex-col lg:flex-row items-center gap-12 mb-20">
           <div className="lg:w-1/2">
             <img
-              src="https://images.unsplash.com/photo-1604193587386-4992207d326c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80" // Replace with actual aerial solar image
+              src="https://espeo.eu/wp-content/uploads/2022/04/Green-tech-what-it-is-about-and-why-you-should-keep-an-eye-on-its-development-in-2022.jpg" // Replace with actual aerial solar image
               alt="Aerial view of solar panels on a large building"
               className="rounded-3xl w-full h-auto shadow-md"
             />
@@ -58,7 +58,7 @@ const GlobalImpactSection: React.FC = () => {
           </div>
           <div className="lg:w-1/2">
             <img
-              src="https://images.unsplash.com/photo-1596394522460-8b3286190653?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80" // Replace with actual wheelchair scooter image
+              src="https://www.millenniumomaha.com/wp-content/uploads/2021/01/pexels-philipp-birmes-830891-scaled.jpg" // Replace with actual wheelchair scooter image
               alt="Person using a wheelchair attachment scooter on a paved road"
               className="rounded-3xl w-full h-auto shadow-md"
             />

@@ -13,49 +13,49 @@ const startupLogos: StartupLogo[] = [
   {
     id: 1,
     name: "TechFlow Solutions",
-    logoUrl: "/api/placeholder/150/60",
+    logoUrl: "https://media.istockphoto.com/id/1449771575/vector/horse-vector-logo.jpg?s=612x612&w=0&k=20&c=h0t2N1gOUz2bbSiQRK4rGboAo_gs4Aak-3fXKV5gnVM=",
     description: "AI-powered workflow automation"
   },
   {
     id: 2,
     name: "EcoTech Labs",
-    logoUrl: "/api/placeholder/150/60",
+    logoUrl: "https://media.istockphoto.com/id/1449771575/vector/horse-vector-logo.jpg?s=612x612&w=0&k=20&c=h0t2N1gOUz2bbSiQRK4rGboAo_gs4Aak-3fXKV5gnVM=",
     description: "Sustainable energy solutions"
   },
   {
     id: 3,
     name: "DataMind AI",
-    logoUrl: "/api/placeholder/150/60",
+    logoUrl: "https://media.istockphoto.com/id/1449771575/vector/horse-vector-logo.jpg?s=612x612&w=0&k=20&c=h0t2N1gOUz2bbSiQRK4rGboAo_gs4Aak-3fXKV5gnVM=",
     description: "Machine learning analytics"
   },
   {
     id: 4,
     name: "BioInnovate",
-    logoUrl: "/api/placeholder/150/60",
+    logoUrl: "https://media.istockphoto.com/id/1449771575/vector/horse-vector-logo.jpg?s=612x612&w=0&k=20&c=h0t2N1gOUz2bbSiQRK4rGboAo_gs4Aak-3fXKV5gnVM=",
     description: "Biotechnology research"
   },
   {
     id: 5,
     name: "QuantumDrive",
-    logoUrl: "/api/placeholder/150/60",
+    logoUrl: "https://media.istockphoto.com/id/1449771575/vector/horse-vector-logo.jpg?s=612x612&w=0&k=20&c=h0t2N1gOUz2bbSiQRK4rGboAo_gs4Aak-3fXKV5gnVM=",
     description: "Quantum computing solutions"
   },
   {
     id: 6,
     name: "SmartAgri Tech",
-    logoUrl: "/api/placeholder/150/60",
+    logoUrl: "https://media.istockphoto.com/id/1449771575/vector/horse-vector-logo.jpg?s=612x612&w=0&k=20&c=h0t2N1gOUz2bbSiQRK4rGboAo_gs4Aak-3fXKV5gnVM=",
     description: "Agricultural technology"
   },
   {
     id: 7,
     name: "NeuralNet Systems",
-    logoUrl: "/api/placeholder/150/60",
+    logoUrl: "https://media.istockphoto.com/id/1449771575/vector/horse-vector-logo.jpg?s=612x612&w=0&k=20&c=h0t2N1gOUz2bbSiQRK4rGboAo_gs4Aak-3fXKV5gnVM=",
     description: "Deep learning platforms"
   },
   {
     id: 8,
     name: "CleanWater Innovations",
-    logoUrl: "/api/placeholder/150/60",
+    logoUrl: "https://media.istockphoto.com/id/1449771575/vector/horse-vector-logo.jpg?s=612x612&w=0&k=20&c=h0t2N1gOUz2bbSiQRK4rGboAo_gs4Aak-3fXKV5gnVM=",
     description: "Water purification technology"
   }
 ];

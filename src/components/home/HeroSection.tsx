@@ -4,7 +4,7 @@ import { ArrowRight, Play, Bot, Brain, Cpu, Wifi } from 'lucide-react';
 
 const HeroSection = () => {
   return (
-    <section className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 pt-16 overflow-hidden">
+    <section className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 pt-14 overflow-hidden">
       {/* Injecting custom styles for the orbital animation */}
       <style>{`
         @keyframes orbit {
@@ -15,20 +15,73 @@ const HeroSection = () => {
           from { transform: rotate(0deg); }
           to { transform: rotate(-360deg); }
         }
-        .animate-orbit-slow {
-          animation: orbit 20s linear infinite;
+        .loader-ring {
+          position: absolute;
+          border-radius: 50%;
+          border-style: solid;
+          border-color: transparent;
         }
-        .animate-orbit-medium {
-          animation: orbit 15s linear infinite;
+        .loader-ring-1 {
+          border-left-width: 4px;
+          border-top-width: 4px;
+          border-left-color: #f59e0b;
+          border-top-color: #f59e0b;
+          animation: orbit 4s linear infinite;
         }
-        .animate-counter-slow {
-          animation: counter-orbit 20s linear infinite;
+        .loader-ring-2 {
+          border-right-width: 4px;
+          border-bottom-width: 4px;
+          border-right-color: #3b82f6;
+          border-bottom-color: #3b82f6;
+          animation: counter-orbit 4s linear infinite;
         }
-        .animate-counter-medium {
-          animation: counter-orbit 15s linear infinite;
+        .loader-ball-arm {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          width: 50%;
+          height: 2px;
+          transform-origin: left;
+          transform: rotate(-45deg);
         }
-        .pause-on-hover:hover, .pause-on-hover:hover * {
-          animation-play-state: paused;
+        .loader-ball {
+          position: absolute;
+          width: 16px;
+          height: 16px;
+          border-radius: 50%;
+          top: -7px;
+          right: -8px;
+          background-color: white;
+        }
+        .loader-ring-1 .loader-ball {
+          background-color: #f59e0b;
+          box-shadow: 0 0 20px #f59e0b, 0 0 40px #f59e0b;
+        }
+        .loader-ring-2 .loader-ball {
+          background-color: #3b82f6;
+          box-shadow: 0 0 20px #3b82f6, 0 0 40px #3b82f6;
+        }
+        .loader-ring-3 {
+          border-top-width: 4px;
+          border-right-width: 4px;
+          border-top-color: #ef4444;
+          border-right-color: #ef4444;
+          animation: orbit 5s linear infinite;
+        }
+        .loader-ring-4 {
+          border-bottom-width: 4px;
+          border-left-width: 4px;
+          border-bottom-color: #a855f7;
+          border-left-color: #a855f7;
+          animation: counter-orbit 6s linear infinite;
+        }
+        .loader-ring-3 .loader-ball {
+          background-color: #ef4444;
+          box-shadow: 0 0 20px #ef4444, 0 0 40px #ef4444;
+        }
+        .loader-ring-4 .loader-ball {
+          background-color: #a855f7;
+          box-shadow: 0 0 20px #a855f7, 0 0 40px #a855f7;
         }
       `}</style>
 
@@ -90,87 +143,40 @@ const HeroSection = () => {
           </div>
           
           {/* Right Content - The Animated Ecosystem */}
-          <div className="flex-1 w-full max-w-lg lg:max-w-xl relative">
-            {/* The Main Card Container */}
-            <div className="aspect-square relative bg-gradient-to-br from-orange-50 to-red-50 rounded-[2.5rem] shadow-2xl border border-white/50 overflow-hidden pause-on-hover group">
+          <div className="flex-1 w-full max-w-lg lg:max-w-xl relative flex items-center justify-center min-h-[600px] -mt-10">
+            
+            <div className="relative w-[350px] h-[350px] sm:w-[450px] sm:h-[450px] flex items-center justify-center">
               
-              {/* Animated Background Gradients */}
-              <div className="absolute top-0 right-0 w-64 h-64 bg-orange-300/30 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
-              <div className="absolute bottom-0 left-0 w-64 h-64 bg-red-300/30 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2"></div>
-
-              {/* Central Hub (Sun) */}
-              <div className="absolute inset-0 flex items-center justify-center z-20">
-                <div className="relative">
-                  {/* Pulsing rings behind logo */}
-                  <div className="absolute inset-0 bg-gradient-to-r from-orange-400 to-red-500 rounded-full animate-ping opacity-20"></div>
-                  <div className="absolute -inset-4 bg-white/40 rounded-full blur-md"></div>
-                  
-                  {/* Main Logo Circle */}
-                  <div className="w-32 h-32 bg-white rounded-full shadow-[0_0_40px_-10px_rgba(251,146,60,0.6)] flex flex-col items-center justify-center relative z-10 border-4 border-orange-50">
-                    <div className="w-16 h-16 bg-gradient-to-tr from-orange-500 to-red-600 rounded-full flex items-center justify-center mb-1 shadow-inner">
-                      <span className="text-white font-bold text-xl tracking-tighter">IITJ</span>
-                    </div>
-                    <span className="text-gray-800 font-bold text-xs tracking-tight">Innovation Hub</span>
-                  </div>
+              {/* Ring 1 (Yellow) */}
+              <div className="absolute inset-0 loader-ring loader-ring-1">
+                <div className="loader-ball-arm">
+                  <div className="loader-ball"></div>
                 </div>
               </div>
 
-              {/* Orbit System Container */}
-              <div className="absolute inset-0 flex items-center justify-center">
-                
-                {/* Outer Orbit Ring (Dashed Line) */}
-                <div className="absolute w-[85%] h-[85%] border border-dashed border-orange-300/50 rounded-full"></div>
-                
-                {/* Inner Orbit Ring (Dashed Line) */}
-                <div className="absolute w-[55%] h-[55%] border border-dashed border-red-300/50 rounded-full"></div>
-
-                {/* TRACK 1: Inner Orbit (Clockwise) - Fast */}
-                <div className="absolute w-[55%] h-[55%] animate-orbit-medium">
-                  {/* Planet: IoT */}
-                  <div className="absolute -top-6 left-1/2 -translate-x-1/2">
-                    <div className="animate-counter-medium">
-                       <FloatingCard icon={<Wifi className="w-5 h-5" />} label="IoT" color="bg-red-500" />
-                    </div>
-                  </div>
-                  {/* Planet: Robotics (Opposite side) */}
-                  <div className="absolute -bottom-6 left-1/2 -translate-x-1/2">
-                    <div className="animate-counter-medium">
-                      <FloatingCard icon={<Bot className="w-5 h-5" />} label="Robotics" color="bg-yellow-500" />
-                    </div>
-                  </div>
+              {/* Ring 3 (Red) */}
+              <div className="absolute inset-[25px] sm:inset-[30px] loader-ring loader-ring-3">
+                <div className="loader-ball-arm">
+                  <div className="loader-ball"></div>
                 </div>
-
-                {/* TRACK 2: Outer Orbit (Counter-Clockwise via CSS or just visually distinct) - Slow */}
-                {/* Note: I'm using orbit-slow here, but visually placed wider */}
-                <div className="absolute w-[85%] h-[85%] animate-orbit-slow" style={{ animationDirection: 'reverse' }}>
-                  {/* Planet: AI */}
-                  <div className="absolute top-1/2 -right-8 -translate-y-1/2">
-                    <div className="animate-counter-slow" style={{ animationDirection: 'normal' }}>
-                      <FloatingCard icon={<Brain className="w-5 h-5" />} label="AI & ML" color="bg-orange-500" />
-                    </div>
-                  </div>
-                  {/* Planet: Tech */}
-                  <div className="absolute top-1/2 -left-8 -translate-y-1/2">
-                    <div className="animate-counter-slow" style={{ animationDirection: 'normal' }}>
-                      <FloatingCard icon={<Cpu className="w-5 h-5" />} label="Deep Tech" color="bg-blue-600" />
-                    </div>
-                  </div>
-                </div>
-
               </div>
-              
-              {/* Interaction Hint */}
-              <div className="absolute bottom-6 left-0 right-0 text-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <span className="text-xs font-medium text-orange-600 bg-white/80 px-3 py-1 rounded-full backdrop-blur-sm">
-                  The Ecosystem revolves around you
-                </span>
+
+              {/* Ring 2 (Blue) */}
+              <div className="absolute inset-[50px] sm:inset-[60px] loader-ring loader-ring-2">
+                <div className="loader-ball-arm">
+                  <div className="loader-ball"></div>
+                </div>
+              </div>
+
+              {/* Central Image Container */}
+              <div className="relative z-10 w-56 h-56 sm:w-72 sm:h-72 rounded-full overflow-hidden border-8 border-white shadow-2xl">
+                <div className="w-full h-full bg-gray-100 flex items-center justify-center bg-[url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80')] bg-cover bg-center">
+                  <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/10"></div>
+                </div>
               </div>
 
             </div>
 
-            {/* Decorative blobs behind the card */}
-            <div className="absolute -top-10 -right-10 w-40 h-40 bg-orange-400 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob"></div>
-            <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-red-400 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000"></div>
           </div>
 
         </div>
@@ -179,16 +185,5 @@ const HeroSection = () => {
   );
 };
 
-// Helper Component for the orbiting nodes
-const FloatingCard = ({ icon, label, color }) => (
-  <div className="flex flex-col items-center gap-2 transform hover:scale-110 transition-transform duration-300 cursor-pointer">
-    <div className={`${color} w-14 h-14 rounded-2xl shadow-lg flex items-center justify-center text-white ring-4 ring-white/60 backdrop-blur-sm`}>
-      {icon}
-    </div>
-    <div className="bg-white/90 backdrop-blur-md px-3 py-1 rounded-lg shadow-sm border border-white/50">
-      <span className="text-xs font-bold text-gray-700 whitespace-nowrap">{label}</span>
-    </div>
-  </div>
-);
 
 export default HeroSection;
