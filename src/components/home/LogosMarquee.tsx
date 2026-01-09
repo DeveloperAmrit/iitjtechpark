@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
+import Link from 'next/link';
 import GeometricBackground from '../common/GeometricBackground';
 
 interface StartupLogo {
@@ -185,6 +186,7 @@ const StartupMarqueeSection: React.FC = () => {
                             className="w-12 h-12 rounded-lg shadow-sm"
                             width={48}
                             height={48}
+                            unoptimized
                         />
                         <div className="bg-teal-50 text-teal-700 text-[10px] px-2 py-1 rounded-full font-bold uppercase tracking-wider opacity-0 group-hover:opacity-100 transition-opacity">
                             Success Story
@@ -217,20 +219,24 @@ const StartupMarqueeSection: React.FC = () => {
             Join the next generation of innovators
           </motion.p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <motion.button 
-                 whileHover={{ scale: 1.05 }}
-                 whileTap={{ scale: 0.95 }}
-                 className="bg-white text-teal-700 px-10 py-4 rounded-full font-bold hover:bg-teal-50 hover:shadow-lg transition-all duration-300"
-            >
-              Start Your Journey
-            </motion.button>
-            <motion.button 
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="border-2 border-white text-white px-10 py-4 rounded-full font-semibold hover:bg-white/10 hover:shadow-lg transition-all duration-300"
-            >
-              View Portfolio
-            </motion.button>
+            <Link href="/initiatives">
+                <motion.button 
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    className="bg-white text-teal-700 px-10 py-4 rounded-full font-bold hover:bg-teal-50 hover:shadow-lg transition-all duration-300"
+                >
+                Start Your Journey
+                </motion.button>
+            </Link>
+            <Link href="/contact">
+                <motion.button 
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    className="border-2 border-white text-white px-10 py-4 rounded-full font-semibold hover:bg-white/10 hover:shadow-lg transition-all duration-300 min-w-[180px]"
+                >
+                Contact Us
+                </motion.button>
+            </Link>
           </div>
         </div>
       </div>

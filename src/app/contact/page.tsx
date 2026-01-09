@@ -1,6 +1,6 @@
 'use client';
 
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import Navbar from '@/components/common/Navbar';
 import Footer from '@/components/common/Footer';
@@ -8,6 +8,32 @@ import GeometricBackground from '@/components/common/GeometricBackground';
 import { MapPin, Phone, Mail, Clock, Send } from 'lucide-react';
 
 export default function ContactPage() {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    subject: '',
+    message: ''
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSubmitted, setIsSubmitted] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    
+    // Simulate API call
+    await new Promise(resolve => setTimeout(resolve, 2000));
+    
+    setIsSubmitting(false);
+    setIsSubmitted(true);
+    setFormData({ name: '', email: '', subject: '', message: '' });
+  };
+  
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+    const { id, value } = e.target;
+    setFormData(prev => ({ ...prev, [id]: value }));
+  };
+
   return (
     <div className="min-h-screen bg-gray-50 flex flex-col relative overflow-hidden">
       <GeometricBackground className="opacity-30" />
@@ -113,15 +139,36 @@ export default function ContactPage() {
               className="p-10 lg:w-3/5 bg-white"
             >
               <h3 className="text-2xl font-bold text-gray-800 mb-6">Send us a Message</h3>
-              <form className="space-y-6">
+              {isSubmitted ? (
+                <div className="h-full flex flex-col items-center justify-center text-center py-10">
+                    <div className="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mb-6">
+                        <Send className="w-10 h-10 text-green-500" />
+                    </div>
+                    <h3 className="text-2xl font-bold text-gray-800 mb-2">Message Sent!</h3>
+                    <p className="text-gray-600 max-w-md mb-8">
+                        Thank you for reaching out to IIT Jodhpur Tech Park. We have received your message and will get back to you shortly.
+                    </p>
+                    <button 
+                        onClick={() => setIsSubmitted(false)}
+                        className="text-orange-600 font-semibold hover:text-orange-700 underline"
+                    >
+                        Send another message
+                    </button>
+                </div>
+              ) : (
+              <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
                     <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">Full Name</label>
                     <input 
                       type="text" 
                       id="name" 
+                      value={formData.name}
+                      onChange={handleChange}
+                      required
                       className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all outline-none bg-gray-50 text-gray-900"
                       placeholder="John Doe"
+                      disabled={isSubmitting}
                     />
                   </div>
                   <div>
@@ -129,15 +176,26 @@ export default function ContactPage() {
                     <input 
                       type="email" 
                       id="email" 
+                      value={formData.email}
+                      onChange={handleChange}
+                      required
                       className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all outline-none bg-gray-50 text-gray-900"
                       placeholder="john@example.com"
+                      disabled={isSubmitting}
                     />
                   </div>
                 </div>
 
                 <div>
                    <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-2">Subject</label>
-                   <select id="subject" className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all outline-none bg-gray-50 text-gray-900">
+                   <select 
+                        id="subject" 
+                        value={formData.subject}
+                        onChange={handleChange}
+                        required
+                        className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all outline-none bg-gray-50 text-gray-900"
+                        disabled={isSubmitting}
+                   >
                       <option value="">Select a topic</option>
                       <option value="incubate">Incubation Inquiry</option>
                       <option value="invest">Investment Opportunities</option>
@@ -150,9 +208,13 @@ export default function ContactPage() {
                   <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">Message</label>
                   <textarea 
                     id="message" 
+                    value={formData.message}
+                    onChange={handleChange}
+                    required
                     rows={5}
                     className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all outline-none bg-gray-50 resize-none text-gray-900"
                     placeholder="How can we help you today?"
+                    disabled={isSubmitting}
                   ></textarea>
                 </div>
 
@@ -160,15 +222,16 @@ export default function ContactPage() {
                   <motion.button 
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
-                    type="submit" 
-                    className="bg-gradient-to-r from-orange-500 to-red-600 text-white font-bold py-3 px-8 rounded-lg shadow-lg hover:shadow-xl transition-all duration-200 flex items-center"
-                    onClick={(e) => e.preventDefault()} // Prevent actual submit for demo
+                    type="submit"
+                    disabled={isSubmitting} 
+                    className={`bg-gradient-to-r from-orange-500 to-red-600 text-white font-bold py-3 px-8 rounded-lg shadow-lg hover:shadow-xl transition-all duration-200 flex items-center ${isSubmitting ? 'opacity-70 cursor-not-allowed' : ''}`}
                   >
-                    Send Message
-                    <Send className="ml-2 w-5 h-5" />
+                    {isSubmitting ? 'Sending...' : 'Send Message'}
+                    {!isSubmitting && <Send className="ml-2 w-5 h-5" />}
                   </motion.button>
                 </div>
               </form>
+              )}
             </motion.div>
 
           </div>

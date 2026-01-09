@@ -1,6 +1,6 @@
 'use client';
 
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import Navbar from '@/components/common/Navbar';
 import Footer from '@/components/common/Footer';
@@ -51,6 +51,22 @@ const newsItems = [
 ];
 
 export default function NewsPage() {
+  const [email, setEmail] = useState('');
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSubmitted, setIsSubmitted] = useState(false);
+
+  const handleSubscribe = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    
+    // Simulate API call
+    await new Promise(resolve => setTimeout(resolve, 1500));
+    
+    setIsSubmitting(false);
+    setIsSubmitted(true);
+    setEmail('');
+  };
+
   return (
     <div className="min-h-screen bg-gray-50 flex flex-col relative overflow-hidden">
       <GeometricBackground className="opacity-30" />
@@ -143,22 +159,53 @@ export default function NewsPage() {
                <p className="text-gray-400 mb-8 max-w-2xl mx-auto">
                   Get the latest highlights from IIT Jodhpur Tech Park delivered directly to your inbox. No spam, we promise.
                </p>
-               <form className="max-w-md mx-auto flex flex-col gap-4 items-center">
-                  <input 
-                    type="email" 
-                    placeholder="Enter your email address" 
-                    className="w-full px-5 py-3 rounded-lg text-gray-900 bg-white focus:outline-none focus:ring-2 focus:ring-orange-500"
-                    required
-                  />
-                  <motion.button 
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    type="submit" 
-                    className="bg-orange-600 hover:bg-orange-700 text-white font-bold py-3 px-6 rounded-lg transition-colors shadow-lg"
-                  >
-                    Subscribe
-                  </motion.button>
-               </form>
+               {isSubmitted ? (
+                    <motion.div 
+                        initial={{ opacity: 0, y: 10 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        className="bg-green-500/10 border border-green-500 rounded-lg p-6 max-w-md mx-auto"
+                    >
+                        <h3 className="text-xl font-bold text-green-400 mb-2">Thank You for Subscribing!</h3>
+                        <p className="text-gray-300">
+                            You have been successfully added to our newsletter list. Stay tuned for updates!
+                        </p>
+                        <button 
+                            onClick={() => setIsSubmitted(false)}
+                            className="mt-4 text-sm text-green-400 hover:text-green-300 underline"
+                        >
+                            Subscribe another email
+                        </button>
+                    </motion.div>
+               ) : (
+                   <form onSubmit={handleSubscribe} className="max-w-md mx-auto flex flex-col gap-4 items-center">
+                      <input 
+                        type="email" 
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                        placeholder="Enter your email address" 
+                        className="w-full px-5 py-3 rounded-lg text-gray-900 bg-white focus:outline-none focus:ring-2 focus:ring-orange-500"
+                        required
+                        disabled={isSubmitting}
+                      />
+                      <motion.button 
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.95 }}
+                        type="submit"
+                        disabled={isSubmitting} 
+                        className={`bg-orange-600 hover:bg-orange-700 text-white font-bold py-3 px-6 rounded-lg transition-colors shadow-lg flex items-center justify-center ${isSubmitting ? 'opacity-70 cursor-not-allowed' : ''}`}
+                      >
+                        {isSubmitting ? (
+                            <>
+                            <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                              <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                              <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                            </svg>
+                            Subscribing...
+                            </>
+                        ) : 'Subscribe'}
+                      </motion.button>
+                   </form>
+               )}
              </div>
           </motion.div>
         </div>
