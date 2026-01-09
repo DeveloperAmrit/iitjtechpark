@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Building2, Trees, Brain, Glasses, Lightbulb, Factory, Cog, Zap, Microscope, Rocket, Cpu, GraduationCap, Globe } from 'lucide-react';
+import { Building2, Trees, Brain, Glasses, Lightbulb, Factory, Cog, Zap, Microscope, Rocket } from 'lucide-react';
 
 const InnovationAnimation = () => {
   // Animation variants
@@ -24,7 +24,7 @@ const InnovationAnimation = () => {
       opacity: 1, 
       y: 0,
       transition: { 
-        type: "spring",
+        type: "spring" as const,
         stiffness: 260,
         damping: 20 
       }
@@ -37,7 +37,7 @@ const InnovationAnimation = () => {
       transition: {
         repeat: Infinity,
         duration: 4,
-        ease: "linear",
+        ease: "linear" as const,
       },
     },
   };
@@ -48,7 +48,7 @@ const InnovationAnimation = () => {
       transition: {
         repeat: Infinity,
         duration: 3,
-        ease: "easeInOut",
+        ease: "easeInOut" as const,
       },
     },
   };
@@ -64,19 +64,6 @@ const InnovationAnimation = () => {
     },
   };
   
-  const lineDrawVariants = {
-    hidden: { pathLength: 0, opacity: 0 },
-    visible: { 
-      pathLength: 1, 
-      opacity: 0.4,
-      transition: { 
-        duration: 1.5, 
-        ease: "easeInOut",
-        delay: 1 
-      }
-    }
-  };
-
   return (
     <div className="relative w-full h-[600px] flex items-center justify-center p-8 overflow-hidden">
       
@@ -87,13 +74,13 @@ const InnovationAnimation = () => {
             className="absolute rounded-full border-4 border-transparent border-t-amber-400 border-l-amber-400 opacity-20"
             style={{ width: '500px', height: '500px' }}
             animate={{ rotate: 360 }}
-            transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
+            transition={{ duration: 25, repeat: Infinity, ease: "linear" as const }}
           />
            <motion.div 
             className="absolute rounded-full border-4 border-transparent border-b-amber-400 border-r-amber-400 opacity-20"
             style={{ width: '480px', height: '480px' }}
             animate={{ rotate: -360 }}
-            transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
+            transition={{ duration: 30, repeat: Infinity, ease: "linear" as const }}
           />
           
           {/* Ring 2 (Blue) */}
@@ -101,7 +88,7 @@ const InnovationAnimation = () => {
              className="absolute rounded-full border-2 border-dashed border-blue-400 opacity-20"
              style={{ width: '380px', height: '380px' }}
              animate={{ rotate: 360 }}
-             transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
+             transition={{ duration: 40, repeat: Infinity, ease: "linear" as const }}
           />
 
            {/* Ring 3 (Red) */}
@@ -109,7 +96,7 @@ const InnovationAnimation = () => {
              className="absolute rounded-full border border-red-400 opacity-20"
              style={{ width: '600px', height: '600px' }}
              animate={{ scale: [1, 1.05, 1], opacity: [0.1, 0.2, 0.1] }}
-             transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+             transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" as const }}
           />
       </div>
 
@@ -124,7 +111,7 @@ const InnovationAnimation = () => {
             className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10"
             initial={{ scale: 0, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
-            transition={{ type: "spring", stiffness: 100, delay: 0.2 }}
+            transition={{ type: "spring" as const, stiffness: 100, delay: 0.2 }}
         >
              <div className="relative w-64 h-64 rounded-full p-2 bg-white/30 backdrop-blur-md border border-white/50 shadow-2xl">
                 <div className="w-full h-full rounded-full overflow-hidden border-4 border-white relative z-10">
@@ -139,14 +126,14 @@ const InnovationAnimation = () => {
                 <motion.div 
                     className="absolute inset-0 rounded-full"
                     animate={{ rotate: 360 }}
-                    transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
+                    transition={{ duration: 10, repeat: Infinity, ease: "linear" as const }}
                 >
                     <div className="absolute -top-1 left-1/2 w-4 h-4 bg-blue-500 rounded-full shadow-lg shadow-blue-500/50"></div>
                 </motion.div>
                  <motion.div 
                     className="absolute inset-4 rounded-full"
                     animate={{ rotate: -360 }}
-                    transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
+                    transition={{ duration: 15, repeat: Infinity, ease: "linear" as const }}
                 >
                     <div className="absolute top-1/2 -right-2 w-3 h-3 bg-amber-500 rounded-full shadow-lg shadow-amber-500/50"></div>
                 </motion.div>

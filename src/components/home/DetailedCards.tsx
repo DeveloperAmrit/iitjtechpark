@@ -40,7 +40,7 @@ const GlobalImpactSection: React.FC = () => {
           <motion.div 
             initial={{ opacity: 0, x: -100 }}
             whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, type: "spring", bounce: 0.4 }}
+            transition={{ duration: 0.8, type: "spring" as const, bounce: 0.4 }}
             className="lg:w-1/2"
           >
             <motion.img
@@ -61,7 +61,7 @@ const GlobalImpactSection: React.FC = () => {
               Building a Greener, Smarter Tomorrow
             </h3>
             <p className="text-gray-600 mb-6">
-              From deploying renewables to energy efficiency, we work towards enabling India's transition to a net-zero future.
+              From deploying renewables to energy efficiency, we work towards enabling India&apos;s transition to a net-zero future.
             </p>
             <a
               href="#"
@@ -96,7 +96,7 @@ const GlobalImpactSection: React.FC = () => {
           <motion.div 
              initial={{ opacity: 0, x: 100 }}
              whileInView={{ opacity: 1, x: 0 }}
-             transition={{ duration: 0.8, type: "spring", bounce: 0.4 }}
+             transition={{ duration: 0.8, type: "spring" as const, bounce: 0.4 }}
              className="lg:w-1/2"
           >
             <motion.img

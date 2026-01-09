@@ -28,7 +28,7 @@ export default function ContactPage() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="mt-4 text-xl text-gray-600 max-w-2xl mx-auto"
           >
-            Whether you are a startup looking for incubation, an investor seeking opportunities, or simply curious, we'd love to hear from you.
+            Whether you are a startup looking for incubation, an investor seeking opportunities, or simply curious, we&apos;d love to hear from you.
           </motion.p>
         </div>
 

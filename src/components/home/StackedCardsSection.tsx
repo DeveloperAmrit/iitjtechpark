@@ -75,7 +75,7 @@ const storySlides: StorySlide[] = [
 
 const Card = ({ slide, index, progress, range, targetScale }: { slide: StorySlide, index: number, progress: MotionValue<number>, range: number[], targetScale: number }) => {
   const container = useRef(null);
-  const { scrollYProgress } = useScroll({
+  useScroll({
     target: container,
     offset: ['start end', 'start start']
   });
@@ -99,7 +99,7 @@ const Card = ({ slide, index, progress, range, targetScale }: { slide: StorySlid
             <motion.div 
               initial={{ scale: 0 }}
               whileInView={{ scale: 1 }}
-              transition={{ type: "spring", stiffness: 200, damping: 20 }}
+              transition={{ type: "spring" as const, stiffness: 200, damping: 20 }}
               className={`p-6 rounded-2xl bg-gradient-to-r ${slide.accent} text-white shadow-xl`}
             >
               {slide.icon}

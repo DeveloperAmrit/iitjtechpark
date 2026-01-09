@@ -20,7 +20,7 @@ export const TimelineNode = ({ index }: { index: number }) => (
   <motion.div 
     initial={{ scale: 0, rotate: -45 }}
     whileInView={{ scale: 1, rotate: 0 }}
-    transition={{ type: "spring", stiffness: 200, delay: 0.2 }}
+    transition={{ type: "spring" as const, stiffness: 200, delay: 0.2 }}
     className="relative w-12 h-12 flex items-center justify-center z-10 bg-white"
   >
     <div className={`absolute inset-0 rounded-xl bg-gradient-to-br from-orange-500 to-red-600 rotate-45 shadow-lg`}></div>
@@ -40,7 +40,7 @@ export const FloatingHexagon = ({ className }: { className?: string }) => (
         rotate: [0, 10, -10, 0],
         scale: [1, 1.1, 1]
     }}
-    transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
+    transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" as const }}
   >
     <path d="M50 5 L93.3 30 V80 L50 105 L6.7 80 V30 Z" fill="none" stroke="currentColor" strokeWidth="2" />
     <path d="M50 15 L83.3 35 V75 L50 95 L16.7 75 V35 Z" fill="none" stroke="currentColor" strokeWidth="1" strokeDasharray="5 5" />
@@ -79,7 +79,7 @@ export const DataFlow = ({ className }: { className?: string }) => (
             x: [0, 100, 100, 0, 0],
             y: [0, 0, 100, 100, 0]
         }}
-        transition={{ duration: 5, repeat: Infinity, ease: "linear" }}
+        transition={{ duration: 5, repeat: Infinity, ease: "linear" as const }}
      />
      <svg width="120" height="120" className="opacity-20 stroke-gray-900 pointer-events-none">
         <rect x="1" y="1" width="100" height="100" fill="none" strokeWidth="2" />

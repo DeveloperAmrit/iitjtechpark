@@ -1,7 +1,8 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import { motion, useAnimationFrame, useMotionValue, useTransform } from 'framer-motion';
+import { motion } from 'framer-motion';
+import Image from 'next/image';
 import GeometricBackground from '../common/GeometricBackground';
 
 interface StartupLogo {
@@ -71,6 +72,7 @@ const StartupMarqueeSection: React.FC = () => {
       left: `${Math.random() * 100}%`,
       size: Math.random() > 0.5 ? '4px' : '6px',
     }));
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setStars(generatedStars);
   }, []);
 
@@ -84,17 +86,17 @@ const StartupMarqueeSection: React.FC = () => {
         {/* Large Circles (Soft Background Blobs) */}
         <motion.div 
             animate={{ scale: [1, 1.2, 1], rotate: [0, 90, 0] }}
-            transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
+            transition={{ duration: 10, repeat: Infinity, ease: "linear" as const }}
             className="absolute -top-20 -left-20 w-96 h-96 bg-teal-500 rounded-full mix-blend-multiply filter blur-3xl opacity-30"
         />
         <motion.div 
             animate={{ scale: [1, 1.3, 1], x: [0, 50, 0] }}
-            transition={{ duration: 12, repeat: Infinity, ease: "linear" }}
+            transition={{ duration: 12, repeat: Infinity, ease: "linear" as const }}
             className="absolute top-0 -right-20 w-96 h-96 bg-emerald-500 rounded-full mix-blend-multiply filter blur-3xl opacity-30"
         />
         <motion.div 
             animate={{ scale: [1, 1.1, 1], y: [0, -50, 0] }}
-            transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
+            transition={{ duration: 15, repeat: Infinity, ease: "linear" as const }}
             className="absolute -bottom-32 left-1/2 w-96 h-96 bg-cyan-500 rounded-full mix-blend-multiply filter blur-3xl opacity-30"
         />
 
@@ -162,7 +164,7 @@ const StartupMarqueeSection: React.FC = () => {
                         repeat: Infinity, 
                         repeatType: "loop", 
                         duration: 20, 
-                        ease: "linear" 
+                        ease: "linear" as const 
                      } 
                  }}
             >
@@ -177,10 +179,12 @@ const StartupMarqueeSection: React.FC = () => {
                         className="bg-white rounded-xl p-6 shadow-md border border-teal-100 min-w-[280px] h-[160px] flex flex-col justify-between group transition-all duration-300"
                     >
                         <div className="flex items-start justify-between mb-3">
-                        <img
+                        <Image
                             src={startup.logoUrl}
                             alt={startup.name}
                             className="w-12 h-12 rounded-lg shadow-sm"
+                            width={48}
+                            height={48}
                         />
                         <div className="bg-teal-50 text-teal-700 text-[10px] px-2 py-1 rounded-full font-bold uppercase tracking-wider opacity-0 group-hover:opacity-100 transition-opacity">
                             Success Story
