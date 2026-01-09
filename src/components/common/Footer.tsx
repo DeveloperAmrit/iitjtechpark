@@ -1,5 +1,9 @@
+'use client';
+
 import React from 'react';
 import { MapPin, Phone, Mail, Clock } from 'lucide-react';
+import { motion } from 'framer-motion';
+import GeometricBackground from './GeometricBackground';
 
 const Footer = () => {
   const quickLinks = [
@@ -42,7 +46,14 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-gray-900 mt-20 text-white">
+    <motion.footer 
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8 }}
+      viewport={{ once: true }}
+      className="bg-gray-900 mt-20 text-white relative overflow-hidden"
+    >
+      <GeometricBackground theme="dark" className="opacity-10" />
       {/* Main Footer Content */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -64,15 +75,15 @@ const Footer = () => {
             </p>
             <div className="flex space-x-4">
               {/* Social Media Icons */}
-              <a href="#" className="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-orange-500 transition-colors">
+              <motion.a whileHover={{ y: -5 }} href="#" className="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-orange-500 transition-colors">
                 <span className="text-sm font-bold">f</span>
-              </a>
-              <a href="#" className="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-orange-500 transition-colors">
+              </motion.a>
+              <motion.a whileHover={{ y: -5 }} href="#" className="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-orange-500 transition-colors">
                 <span className="text-sm font-bold">t</span>
-              </a>
-              <a href="#" className="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-orange-500 transition-colors">
+              </motion.a>
+              <motion.a whileHover={{ y: -5 }} href="#" className="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-orange-500 transition-colors">
                 <span className="text-sm font-bold">in</span>
-              </a>
+              </motion.a>
             </div>
           </div>
 
@@ -130,7 +141,7 @@ const Footer = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="text-gray-400 text-sm mb-4 md:mb-0">
-              © 2024 IIT Jodhpur Tech Park. All rights reserved.
+              © {new Date().getFullYear()} IIT Jodhpur Tech Park. All rights reserved.
             </div>
             <div className="flex space-x-6 text-sm">
               <a href="#" className="text-gray-400 hover:text-white transition-colors">
@@ -146,7 +157,7 @@ const Footer = () => {
           </div>
         </div>
       </div>
-    </footer>
+    </motion.footer>
   );
 };
 

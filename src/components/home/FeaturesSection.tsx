@@ -1,5 +1,9 @@
+'use client';
+
 import React from 'react';
 import { Lightbulb, Users, Target, Zap } from 'lucide-react';
+import { motion } from 'framer-motion';
+import GeometricBackground from '../common/GeometricBackground';
 
 const FeaturesSection = () => {
   const features = [
@@ -29,26 +33,73 @@ const FeaturesSection = () => {
     }
   ];
 
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2
+      }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        type: "spring",
+        stiffness: 100,
+        damping: 10
+      }
+    }
+  };
+
   return (
-    <section className="py-20 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="py-20 bg-white relative overflow-hidden">
+      <GeometricBackground className="opacity-30" />
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">
+          <motion.h2 
+            initial={{ opacity: 0, y: -20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-4xl font-bold text-gray-900 mb-4"
+          >
             Why Choose <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-red-500">IIT Jodhpur Tech Park</span>
-          </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          </motion.h2>
+          <motion.p 
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="text-xl text-gray-600 max-w-3xl mx-auto"
+          >
             We provide a comprehensive ecosystem that nurtures innovation, supports entrepreneurship, 
             and accelerates technological advancement in the region.
-          </p>
+          </motion.p>
         </div>
 
         {/* Features Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <motion.div 
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          className="grid md:grid-cols-2 lg:grid-cols-4 gap-8"
+        >
           {features.map((feature, index) => (
-            <div
+            <motion.div
               key={index}
-              className="group p-8 bg-gray-50 rounded-2xl hover:bg-white hover:shadow-xl transition-all duration-300 border border-gray-100 hover:border-orange-200"
+              variants={itemVariants}
+              whileHover={{ 
+                y: -10,
+                transition: { duration: 0.2 }
+              }}
+              className="group p-8 bg-gray-50 rounded-2xl border border-gray-100 hover:border-orange-200 hover:shadow-xl transition-colors duration-300"
             >
               {/* Icon */}
               <div className={`w-16 h-16 bg-gradient-to-r ${feature.color} rounded-xl flex items-center justify-center text-white mb-6 group-hover:scale-110 transition-transform duration-300`}>
@@ -62,22 +113,43 @@ const FeaturesSection = () => {
               <p className="text-gray-600 leading-relaxed">
                 {feature.description}
               </p>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
 
         {/* CTA Section */}
-        <div className="mt-16 text-center">
-          <div className="bg-gradient-to-r from-orange-500 to-red-500 rounded-2xl p-8 text-white">
-            <h3 className="text-3xl font-bold mb-4">Ready to Innovate?</h3>
-            <p className="text-xl mb-6 opacity-90">
+        <motion.div 
+          initial={{ opacity: 0, scale: 0.95 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.4 }}
+          className="mt-16 text-center"
+        >
+          <div className="bg-gradient-to-r from-orange-500 to-red-500 rounded-2xl p-8 text-white relative overflow-hidden">
+             <motion.div 
+               className="absolute top-0 right-0 w-64 h-64 bg-white opacity-5 rounded-full -mr-16 -mt-16"
+               animate={{ scale: [1, 1.2, 1] }}
+               transition={{ duration: 3, repeat: Infinity }}
+             />
+             <motion.div 
+               className="absolute bottom-0 left-0 w-48 h-48 bg-white opacity-5 rounded-full -ml-10 -mb-10"
+               animate={{ scale: [1, 1.3, 1] }}
+               transition={{ duration: 4, repeat: Infinity, delay: 1 }}
+             />
+             
+            <h3 className="text-3xl font-bold mb-4 relative z-10">Ready to Innovate?</h3>
+            <p className="text-xl mb-6 opacity-90 relative z-10">
               Join our thriving ecosystem of innovators, researchers, and entrepreneurs.
             </p>
-            <button className="bg-white text-orange-600 px-8 py-3 rounded-xl font-medium hover:bg-gray-100 transition-colors duration-200 shadow-lg">
+            <motion.button 
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="bg-white text-orange-600 px-8 py-3 rounded-xl font-medium hover:bg-gray-100 transition-colors duration-200 shadow-lg relative z-10"
+            >
               Join Our Community
-            </button>
+            </motion.button>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

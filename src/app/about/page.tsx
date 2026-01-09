@@ -1,6 +1,11 @@
+'use client';
+
 import React from 'react';
+import { motion } from 'framer-motion';
 import Navbar from '@/components/common/Navbar';
 import Footer from '@/components/common/Footer';
+import GeometricBackground from '@/components/common/GeometricBackground';
+import { CircuitBoardHero, TimelineNode, FloatingHexagon, TechGrid, DataFlow } from '@/components/about/AboutDecorations';
 
 const timelineEvents = [
   {
@@ -42,56 +47,108 @@ const timelineEvents = [
 
 export default function AboutUs() {
   return (
-    <div className="min-h-screen bg-white text-gray-900 font-sans">
+    <div className="min-h-screen bg-white text-gray-900 font-sans relative overflow-hidden">
+      <GeometricBackground className="opacity-30" />
       <Navbar />
       
       <main>
         {/* Hero Section */}
-        <section className="relative py-20 overflow-hidden pt-36 bg-gradient-to-br from-orange-50 via-white to-yellow-50">
-          <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-orange-500 via-red-500 to-yellow-500"></div>
+        <section className="relative py-24 overflow-hidden pt-40 bg-white">
+          <div className="absolute inset-0 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px] opacity-50"></div>
+          <CircuitBoardHero />
+          
           <div className="container mx-auto px-4 md:px-6 relative z-10">
-            <div className="max-w-4xl mx-auto text-center">
-              <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-orange-600 to-red-600">
-                Enabling Innovation Ecosystem: AIOT FAB
-              </h1>
-              <p className="text-lg md:text-xl text-gray-700 mb-8 leading-relaxed">
-                IIT Jodhpur is setting up an Incubation Centre and Technology Park in its campus
-                to nucleate a cluster of new age ventures. The focal theme for the Technology
-                Park is AIOT – Artificial Intelligence of Things.
-              </p>
-              <p className="text-lg md:text-xl text-gray-700 leading-relaxed">
-                Technology Park under the aegis of an independent section-8 company managed by
-                IIT Jodhpur with the financial and technical support of relevant stake-holders
-                (Government Agencies, Angel and Venture Investors, Technology Providers).
-              </p>
+            <div className="max-w-5xl mx-auto text-center">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6 }}
+                className="inline-block mb-6 px-5 py-2 rounded-full bg-orange-50 border border-orange-100 text-orange-600 font-semibold text-sm tracking-wide"
+              >
+                ABOUT US
+              </motion.div>
+              
+              <motion.h1 
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.1 }}
+                className="text-5xl md:text-7xl font-bold mb-8 tracking-tight text-gray-900"
+              >
+                Enabling Innovation Ecosystem: <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-600 to-red-600">AIOT FAB</span>
+              </motion.h1>
+
+              <motion.div 
+                 initial={{ opacity: 0, y: 20 }}
+                 animate={{ opacity: 1, y: 0 }}
+                 transition={{ duration: 0.6, delay: 0.2 }}
+                 className="relative"
+              >
+                <div className="absolute -inset-1 bg-gradient-to-r from-orange-100 to-red-50 rounded-2xl blur opacity-30"></div>
+                <div className="relative bg-white/50 backdrop-blur-sm border border-orange-100 rounded-xl p-8 md:p-10 shadow-sm max-w-4xl mx-auto">
+                    <p className="text-xl md:text-2xl text-gray-700 mb-6 leading-relaxed font-light">
+                        IIT Jodhpur is setting up an Incubation Centre and Technology Park in its campus to nucleate a cluster of new age ventures. The focal theme for the Technology Park is <span className="font-semibold text-gray-900">AIOT – Artificial Intelligence of Things</span>.
+                    </p>
+                    <p className="text-lg md:text-xl text-gray-600 leading-relaxed text-balance">
+                        Technology Park under the aegis of an independent section-8 company managed by IIT Jodhpur with the financial and technical support of relevant stake-holders (Government Agencies, Angel and Venture Investors, Technology Providers).
+                    </p>
+                </div>
+              </motion.div>
             </div>
           </div>
           
-          {/* Decorative circles */}
-          <div className="absolute top-10 left-10 w-32 h-32 bg-orange-200 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob"></div>
-          <div className="absolute top-10 right-10 w-32 h-32 bg-yellow-200 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-2000"></div>
-          <div className="absolute -bottom-8 left-20 w-32 h-32 bg-red-200 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-4000"></div>
+          {/* Decorative Gradients */}
+          <div className="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 bg-orange-500/10 rounded-full blur-3xl pointer-events-none"></div>
+          <div className="absolute bottom-0 left-0 -ml-20 -mb-20 w-96 h-96 bg-red-500/10 rounded-full blur-3xl pointer-events-none"></div>
         </section>
 
         {/* Timeline Section */}
         <section className="py-20 bg-white">
           <div className="container mx-auto px-4 md:px-6">
             <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4">Our Strategic Vision</h2>
-              <div className="w-24 h-1 bg-gradient-to-r from-orange-500 to-red-500 mx-auto rounded-full"></div>
+              <motion.div
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+              >
+                <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4">Our Strategic Vision</h2>
+              </motion.div>
+              <motion.div 
+                initial={{ width: 0 }}
+                whileInView={{ width: 96 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8 }}
+                className="h-1 bg-gradient-to-r from-orange-500 to-red-500 mx-auto rounded-full"
+              ></motion.div>
             </div>
 
             <div className="relative max-w-5xl mx-auto">
               {/* Vertical Line */}
-              <div className="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gradient-to-b from-orange-200 via-red-200 to-yellow-200 hidden md:block"></div>
+              <motion.div 
+                initial={{ height: 0 }}
+                whileInView={{ height: '100%' }}
+                viewport={{ once: true }}
+                transition={{ duration: 1.5 }}
+                className="absolute left-1/2 transform -translate-x-1/2 w-1 bg-gradient-to-b from-orange-200 via-red-200 to-yellow-200 hidden md:block"
+              ></motion.div>
 
               <div className="space-y-12 md:space-y-24">
                 {timelineEvents.map((event, index) => (
-                  <div key={index} className={`flex flex-col md:flex-row items-center ${index % 2 === 0 ? 'md:flex-row-reverse' : ''}`}>
+                  <motion.div 
+                    key={index}
+                    initial={{ opacity: 0, y: 50 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, margin: "-100px" }}
+                    transition={{ duration: 0.7, delay: index * 0.1 }}
+                    className={`flex flex-col md:flex-row items-center ${index % 2 === 0 ? 'md:flex-row-reverse' : ''}`}
+                  >
                     
                     {/* Content */}
                     <div className="w-full md:w-1/2 px-4 md:px-12 mb-8 md:mb-0">
-                      <div className={`bg-white p-6 rounded-2xl shadow-lg border-t-4 border-orange-500 hover:shadow-xl transition-shadow duration-300 ${index % 2 === 0 ? 'text-left' : 'text-left md:text-right'}`}>
+                      <motion.div 
+                        whileHover={{ y: -5, boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)" }}
+                        className={`bg-white p-6 rounded-2xl shadow-lg border-t-4 border-orange-500 transition-all duration-300 ${index % 2 === 0 ? 'text-left' : 'text-left md:text-right'}`}
+                      >
                         <span className="inline-block px-4 py-1 rounded-full bg-orange-100 text-orange-700 font-bold text-sm mb-3">
                           {event.year}
                         </span>
@@ -99,17 +156,23 @@ export default function AboutUs() {
                         <p className="text-gray-600 leading-relaxed">
                           {event.description}
                         </p>
-                      </div>
+                      </motion.div>
                     </div>
 
-                    {/* Dot on the line */}
-                    <div className="absolute left-1/2 transform -translate-x-1/2 w-8 h-8 rounded-full bg-white border-4 border-red-500 z-10 hidden md:flex items-center justify-center">
-                      <div className="w-3 h-3 bg-orange-500 rounded-full"></div>
+                    {/* Dot */}
+                    <div className="relative flex items-center justify-center w-16 z-20">
+                      <TimelineNode index={index} />
+                      {/* Connection Line for mobile */}
+                      <div className="absolute top-4 left-1/2 transform -translate-x-1/2 w-0.5 h-full bg-gray-200 md:hidden block"></div>
                     </div>
-
-                    {/* Empty space for the other side */}
-                    <div className="w-full md:w-1/2"></div>
-                  </div>
+                    
+                    {/* Empty Space for alternate side with decorations */}
+                    <div className="w-full md:w-1/2 hidden md:flex justify-center items-center relative h-full min-h-[100px]">
+                        {index % 3 === 0 && <FloatingHexagon className={index % 2 === 0 ? "left-10" : "right-10"} />}
+                        {index % 3 === 1 && <TechGrid className={index % 2 === 0 ? "left-20" : "right-20"} />}
+                        {index % 3 === 2 && <DataFlow className={index % 2 === 0 ? "left-12 top-0" : "right-12 top-0"} />}
+                    </div>
+                  </motion.div>
                 ))}
               </div>
             </div>
