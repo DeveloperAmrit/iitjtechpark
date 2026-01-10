@@ -34,3 +34,19 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+## SEO Configuration
+
+This project includes the following SEO improvements:
+
+- **Metadata**: Configured in `src/app/layout.tsx` and sub-layouts.
+- **Sitemap**: Generated via `src/app/sitemap.ts`.
+- **Robots.txt**: Generated via `src/app/robots.ts`.
+- **Structured Data (JSON-LD)**: Added to the home page.
+- **Manifest**: `src/app/manifest.ts` for PWA support.
+
+**Note:** Please update the default domain `https://iitjtechpark.com` in the following files before deployment:
+- `src/app/layout.tsx`
+- `src/app/sitemap.ts`
+- `src/app/robots.ts`
+- `src/app/page.tsx` (JSON-LD)
