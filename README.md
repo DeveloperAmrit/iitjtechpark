@@ -1,8 +1,74 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# IIT Jodhpur Tech Park
 
-## Getting Started
+Official website for IIT Jodhpur Tech Park - A premier innovation hub fostering entrepreneurship, research, and technological advancement in Rajasthan.
 
-First, run the development server:
+## 🚀 Overview
+
+This project is built with [Next.js](https://nextjs.org) (App Router), leveraging the latest web technologies to provide a high-performance, accessible, and visually engaging experience. The website serves as a digital gateway to the Tech Park's ecosystem, showcasing initiatives, startups, and opportunities for collaboration.
+
+## 🛠 Tech Stack
+
+- **Framework:** [Next.js 16](https://nextjs.org/) (React 19)
+- **Styling:** [Tailwind CSS v4](https://tailwindcss.com/)
+- **Animations:** [Framer Motion](https://www.framer.com/motion/)
+- **Icons:** [Lucide React](https://lucide.dev/)
+- **Font:** Geist & Geist Mono (via `next/font`)
+- **Linting:** ESLint
+
+## ✨ Features
+
+- **Modern UI/UX:** Responsive design with geometric backgrounds and smooth animations.
+- **SEO Optimized:**
+  - **Metadata:** deeply integrated in layouts.
+  - **Sitemap & Robots:** Dynamically generated via `sitemap.ts` and `robots.ts`.
+  - **Structured Data:** JSON-LD for rich search results.
+- **PWA Ready:** Includes `manifest.ts` for progressive web app capabilities.
+
+## 📂 Project Structure
+
+```bash
+src/
+├── app/                  # App Router pages and layouts
+│   ├── about/            # About page
+│   ├── contact/          # Contact page
+│   ├── ecosystem/        # Ecosystem details
+│   ├── initiatives/      # Projects and initiatives
+│   ├── news/             # News and updates
+│   ├── layout.tsx        # Root layout with Metadata
+│   └── page.tsx          # Homepage
+├── components/           # Reusable React components
+│   ├── common/           # Shared components (Navbar, Footer, etc.)
+│   ├── home/             # Homepage-specific components
+│   └── about/            # About page components
+└── public/               # Static assets
+```
+
+## 🏁 Getting Started
+
+### Prerequisites
+
+Ensure you have [Node.js](https://nodejs.org/) installed (LTS version recommended).
+
+### Installation
+
+1. Clone the repository:
+   ```bash
+   git clone <repository-url>
+   cd iitjtechpark
+   ```
+
+2. Install dependencies:
+   ```bash
+   npm install
+   # or
+   yarn install
+   # or
+   pnpm install
+   ```
+
+### Development
+
+Run the development server:
 
 ```bash
 npm run dev
@@ -10,43 +76,49 @@ npm run dev
 yarn dev
 # or
 pnpm dev
-# or
-bun dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Building for Production
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+To create an optimized production build:
 
-## Learn More
+```bash
+npm run build
+# or
+yarn build
+# or
+pnpm build
+```
 
-To learn more about Next.js, take a look at the following resources:
+Then start the production server:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+npm run start
+# or
+yarn start
+# or
+pnpm start
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 📜 Scripts
 
-## Deploy on Vercel
+- `dev`: Runs the development server.
+- `build`: Builds the application for production.
+- `start`: Starts the production server.
+- `lint`: Runs ESLint to check for code quality issues.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## ⚠️ Configuration Note
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
-
-## SEO Configuration
-
-This project includes the following SEO improvements:
-
-- **Metadata**: Configured in `src/app/layout.tsx` and sub-layouts.
-- **Sitemap**: Generated via `src/app/sitemap.ts`.
-- **Robots.txt**: Generated via `src/app/robots.ts`.
-- **Structured Data (JSON-LD)**: Added to the home page.
-- **Manifest**: `src/app/manifest.ts` for PWA support.
-
-**Note:** Please update the default domain `https://iitjtechpark.com` in the following files before deployment:
+Before deployment, please ensure you update the default domain `https://iitjtechpark.com` in the following files:
 - `src/app/layout.tsx`
 - `src/app/sitemap.ts`
-- `src/app/robots.ts`
-- `src/app/page.tsx` (JSON-LD)
+
+## 🤝 Contribution
+
+Contributions are welcome! Please feel free to refer to the issues tab or open a PR.
+
+## 📄 License
+
+[MIT](LICENSE)
