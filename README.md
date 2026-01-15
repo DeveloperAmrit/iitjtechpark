@@ -2,11 +2,11 @@
 
 Official website for IIT Jodhpur Tech Park - A premier innovation hub fostering entrepreneurship, research, and technological advancement in Rajasthan.
 
-## 🚀 Overview
+## Overview
 
 This project is built with [Next.js](https://nextjs.org) (App Router), leveraging the latest web technologies to provide a high-performance, accessible, and visually engaging experience. The website serves as a digital gateway to the Tech Park's ecosystem, showcasing initiatives, startups, and opportunities for collaboration.
 
-## 🛠 Tech Stack
+## Tech Stack
 
 - **Framework:** [Next.js 16](https://nextjs.org/) (React 19)
 - **Styling:** [Tailwind CSS v4](https://tailwindcss.com/)
@@ -15,7 +15,7 @@ This project is built with [Next.js](https://nextjs.org) (App Router), leveragin
 - **Font:** Geist & Geist Mono (via `next/font`)
 - **Linting:** ESLint
 
-## ✨ Features
+## Features
 
 - **Modern UI/UX:** Responsive design with geometric backgrounds and smooth animations.
 - **SEO Optimized:**
@@ -24,7 +24,7 @@ This project is built with [Next.js](https://nextjs.org) (App Router), leveragin
   - **Structured Data:** JSON-LD for rich search results.
 - **PWA Ready:** Includes `manifest.ts` for progressive web app capabilities.
 
-## 📂 Project Structure
+## Project Structure
 
 ```bash
 src/
@@ -43,7 +43,7 @@ src/
 └── public/               # Static assets
 ```
 
-## 🏁 Getting Started
+## Getting Started
 
 ### Prerequisites
 
@@ -102,7 +102,7 @@ yarn start
 pnpm start
 ```
 
-## 📜 Scripts
+## Scripts
 
 - `dev`: Runs the development server.
 - `build`: Builds the application for production.
@@ -115,10 +115,10 @@ Before deployment, please ensure you update the default domain `https://iitjtech
 - `src/app/layout.tsx`
 - `src/app/sitemap.ts`
 
-## 🤝 Contribution
+## Contribution
 
 Contributions are welcome! Please feel free to refer to the issues tab or open a PR.
 
-## 📄 License
+## License
 
 [MIT](LICENSE)
