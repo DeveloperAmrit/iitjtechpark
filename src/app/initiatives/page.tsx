@@ -10,39 +10,39 @@ import { Rocket, Users, Globe, Lightbulb, Target, Award } from 'lucide-react';
 const initiatives = [
   {
     icon: <Rocket className="h-8 w-8 text-orange-500" />,
-    title: "Deep Tech Acceleration Program",
-    description: "A 12-month intensive program designed to support startups building cutting-edge solutions in AI, IoT, and Robotics. Provides mentorship, seed funding up to ₹50 Lakhs, and access to state-of-the-art labs.",
-    status: "Applications Open"
+    title: "Industry Research Centers",
+    description: "Creating dedicated research centers and groups in collaboration with industry partners to focus on specific technological challenges and advancements.",
+    status: "Active"
   },
   {
     icon: <Users className="h-8 w-8 text-blue-500" />,
-    title: "Women Entrepreneurship Drive",
-    description: "Empowering women founders through dedicated incubation support, networking opportunities, and specialized workshops. Aiming to create 100+ women-led successful enterprises by 2030.",
+    title: "Joint Research Programs",
+    description: "Developing co-innovation programs where academia and industry work together on high-impact projects, sharing resources and expertise.",
     status: "Ongoing"
   },
   {
     icon: <Lightbulb className="h-8 w-8 text-yellow-500" />,
-    title: "Student Innovation Fellowship",
-    description: "Encouraging student innovators from IIT Jodhpur and regional colleges to transform their academic projects into viable commercial products. Offers a monthly stipend and prototyping grant.",
-    status: "Applications Closing Soon"
+    title: "Research Park Consortium",
+    description: "Forming consortiums in targeted areas to bring together multiple stakeholders for large-scale research initiatives and policy advocacy.",
+    status: "Forming"
   },
   {
     icon: <Globe className="h-8 w-8 text-green-500" />,
-    title: "Sustainability & Green Tech Challenge",
-    description: "A grand challenge focused on solving critical environmental issues. Startups working on renewable energy, waste management, and sustainable agriculture are invited to pitch for pilots.",
-    status: "Coming Soon"
+    title: "Regional Development",
+    description: "Developing projects aligned with local needs such as AI, Agri-tech, and rural healthcare to benefit the immediate community and state.",
+    status: "Focus Area"
   },
   {
     icon: <Target className="h-8 w-8 text-red-500" />,
-    title: "Defense Tech Cohort",
-    description: "Collaborating with defense agencies to develop indigenous technologies for national security. Focus areas include drones, cybersecurity, and advanced materials.",
-    status: "Invite Only"
+    title: "IP & Tech Transfer",
+    description: "Facilitating revenue sharing, intellectual property creation, and technology transfer policies to commercialize research outputs.",
+    status: "Policy Active"
   },
   {
     icon: <Award className="h-8 w-8 text-purple-500" />,
-    title: "Corporate Innovation Bridge",
-    description: "Connecting startups with large corporations for paid pilots, co-development, and strategic investment opportunities. Bridging the gap between agile innovation and market scale.",
-    status: "Active"
+    title: "Consulting & Sabbaticals",
+    description: "Offering consulting opportunities for faculty and sabbaticals for industry experts to foster cross-pollination of ideas.",
+    status: "Available"
   }
 ];
 
@@ -68,7 +68,7 @@ export default function InitiativesPage() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="mt-5 max-w-xl mx-auto text-xl text-gray-500"
           >
-            Fostering a culture of innovation through targeted programs designed for startups, students, and researchers.
+            Fostering strong academia-industry partnerships to co-develop solutions and drive innovation.
           </motion.p>
         </div>
 

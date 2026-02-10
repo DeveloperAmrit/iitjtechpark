@@ -9,26 +9,26 @@ const FeaturesSection = () => {
   const features = [
     {
       icon: <Lightbulb className="h-8 w-8" />,
-      title: "Innovation Hub",
-      description: "State-of-the-art facilities fostering groundbreaking research and development across multiple domains.",
+      title: "Interdisciplinary Research",
+      description: "A hub for cutting-edge and interdisciplinary research, fostering strong academia-industry partnerships.",
       color: "from-orange-500 to-red-500"
     },
     {
       icon: <Users className="h-8 w-8" />,
-      title: "Startup Incubation",
-      description: "Comprehensive support system for emerging entrepreneurs with mentorship, funding, and resources.",
+      title: "Industry Partnership",
+      description: "Co-develop solutions aligned with national priorities through strong academia-industry collaborations.",
       color: "from-red-500 to-pink-500"
     },
     {
       icon: <Target className="h-8 w-8" />,
-      title: "Industry Collaboration",
-      description: "Strong partnerships with leading industries to bridge the gap between academia and real-world applications.",
+      title: "Co-Innovation",
+      description: "Develop joint research and co-innovation programs with industry partners.",
       color: "from-yellow-500 to-orange-500"
     },
     {
       icon: <Zap className="h-8 w-8" />,
-      title: "Technology Transfer",
-      description: "Streamlined processes for converting research innovations into market-ready solutions.",
+      title: "IP & Technology Transfer",
+      description: "Revenue sharing, IP, and technology transfer policies to facilitate commercialization.",
       color: "from-blue-500 to-purple-500"
     }
   ];

@@ -25,7 +25,7 @@ const HeroSection = () => {
               className="mb-6 flex justify-center lg:justify-start"
             >
               <span className="inline-block px-4 py-2 bg-orange-100 text-orange-600 rounded-full text-sm font-medium border border-orange-200">
-                Innovation Hub
+                Research & Development Hub
               </span>
             </motion.div>
             
@@ -37,7 +37,7 @@ const HeroSection = () => {
             >
               IIT Jodhpur
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-600 to-red-600 block">
-                Tech Park
+                Technology Park
               </span>
             </motion.h1>
             
@@ -47,8 +47,7 @@ const HeroSection = () => {
               transition={{ duration: 0.7, delay: 0.4 }}
               className="text-xl text-gray-600 leading-relaxed mb-8 max-w-lg mx-auto lg:mx-0"
             >
-              Fostering innovation, entrepreneurship, and technological advancement in the heart of Rajasthan. 
-              Where cutting-edge research meets real-world solutions.
+              To establish a world-class ecosystem that seamlessly integrates academia and industry, driving innovation to address real-world challenges.
             </motion.p>
             
             <motion.div 
@@ -79,9 +78,9 @@ const HeroSection = () => {
               className="flex flex-wrap gap-8 justify-center lg:justify-start border-t border-gray-200 pt-8"
             >
               {[
-                { label: 'Startups', value: 50, suffix: '+' },
-                { label: 'Research Labs', value: 25, suffix: '+' },
-                { label: 'Innovations', value: 100, suffix: '+' }
+                { label: 'Industry Partners', value: 10, suffix: '+' },
+                { label: 'Research Centers', value: 15, suffix: '+' },
+                { label: 'Patents & Papers', value: 100, suffix: '+' }
               ].map((stat, index, array) => (
                 <div key={stat.label} className="flex items-center">
                     <div>

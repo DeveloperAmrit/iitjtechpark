@@ -9,36 +9,36 @@ import GeometricBackground from '@/components/common/GeometricBackground';
 import { Building2, Users, Rocket, Network, ArrowRight } from 'lucide-react';
 
 const stats = [
-  { label: 'Incubated Startups', value: 45, suffix: '+' },
-  { label: 'Corporate Partners', value: 12, suffix: '+' },
-  { label: 'Research Labs', value: 8, suffix: '' },
-  { label: 'Mentors', value: 50, suffix: '+' },
+  { label: 'Industry Partners', value: 3, suffix: '+' },
+  { label: 'Departments', value: 10, suffix: '+' },
+  { label: 'Research Centers', value: 8, suffix: '+' },
+  { label: 'Schools', value: 4, suffix: '' },
 ];
 
 const categories = [
   {
-    title: 'Incubated Startups',
-    icon: <Rocket className="w-8 h-8 text-orange-500" />,
-    description: 'Innovative ventures shaping the future of technology.',
-    items: ['TechNova Solutions', 'AgriSense AI', 'MedTech Innovations', 'CyberGuard Systems', 'SmartEnergy Labs', 'RoboDynamics']
-  },
-  {
     title: 'Industry Partners',
+    icon: <Rocket className="w-8 h-8 text-orange-500" />,
+    description: 'Companies onboarded for collaborative research and development.',
+    items: ['RSA (Renewable Energy)', 'Saanjh.Al / NVlife (AI, Healthcare)', 'Luit Renewable (Energy)']
+  },
+  {
+    title: 'Facilities',
     icon: <Building2 className="w-8 h-8 text-orange-500" />,
-    description: 'Leading corporations collaborating for research and development.',
-    items: ['Global Tech Corp', 'Future Networks Ltd', 'Green Energy Solutions', 'Defense Systems India', 'Automotive Giants']
+    description: 'State-of-the-art infrastructure facilitating cutting-edge research.',
+    items: ['Techpark Hall - 1', 'Techpark Hall - 2', 'Techpark Hall - 3', 'Open Space for Prototyping']
   },
   {
-    title: 'Research Centers',
+    title: 'Research Ecosystem',
     icon: <Network className="w-8 h-8 text-orange-500" />,
-    description: 'Advanced centers of excellence driving breakthrough research.',
-    items: ['Center for AI', 'IoT Innovation Hub', 'Smart City Lab', 'Biotech Research Center']
+    description: 'Interdisciplinary hubs and departments fostering innovation.',
+    items: ['Bioscience & Bioengineering', 'Computer Science & Engineering', 'Electrical Engineering', 'Center for Emerging Technologies']
   },
   {
-    title: 'Mentorship Network',
+    title: 'Faculty Leadership',
     icon: <Users className="w-8 h-8 text-orange-500" />,
-    description: 'Expert guidance from industry veterans and academic leaders.',
-    items: ['Industry Veterans', 'Academic Experts', 'Venture Capitalists', 'Technical Advisors']
+    description: 'Distinguished faculty leading research and industry co-development.',
+    items: ['Head, Rishabh COE', 'Prof. Mitali Mukerji', 'Faculty Coordinators', 'Department Heads']
   }
 ];
 
@@ -67,7 +67,7 @@ export default function Ecosystem() {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="text-xl text-gray-300 max-w-3xl"
             >
-              A vibrant community of innovators, researchers, and entrepreneurs working together to solve global challenges.
+              Collaborating with industry to drive research, innovation, and technological advancement.
             </motion.p>
           </div>
         </div>

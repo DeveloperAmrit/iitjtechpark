@@ -16,51 +16,51 @@ interface StartupLogo {
 const startupLogos: StartupLogo[] = [
   {
     id: 1,
-    name: "TechFlow Solutions",
-    logoUrl: "https://ui-avatars.com/api/?name=TechFlow&background=0D8ABC&color=fff&size=128",
-    description: "AI-powered workflow automation"
+    name: "RSA",
+    logoUrl: "https://ui-avatars.com/api/?name=RSA&background=0D8ABC&color=fff&size=128",
+    description: "Renewable Energy"
   },
   {
     id: 2,
-    name: "EcoTech Labs",
-    logoUrl: "https://ui-avatars.com/api/?name=EcoTech&background=27AE60&color=fff&size=128",
-    description: "Sustainable energy solutions"
+    name: "Saanjh.AI",
+    logoUrl: "https://ui-avatars.com/api/?name=Saanjh&background=27AE60&color=fff&size=128",
+    description: "AI & Healthcare"
   },
   {
     id: 3,
-    name: "DataMind AI",
-    logoUrl: "https://ui-avatars.com/api/?name=DataMind&background=8E44AD&color=fff&size=128",
-    description: "Machine learning analytics"
+    name: "NVlife Pvt. Ltd.",
+    logoUrl: "https://ui-avatars.com/api/?name=NVLife&background=8E44AD&color=fff&size=128",
+    description: "Healthcare Innovation"
   },
   {
     id: 4,
-    name: "BioInnovate",
-    logoUrl: "https://ui-avatars.com/api/?name=Bio+Innovate&background=E67E22&color=fff&size=128",
-    description: "Biotechnology research"
+    name: "Luit Renewable",
+    logoUrl: "https://ui-avatars.com/api/?name=Luit&background=E67E22&color=fff&size=128",
+    description: "Energy Solutions"
   },
   {
     id: 5,
-    name: "QuantumDrive",
-    logoUrl: "https://ui-avatars.com/api/?name=Quantum&background=2980B9&color=fff&size=128",
-    description: "Quantum computing solutions"
+    name: "Elektrolites",
+    logoUrl: "https://ui-avatars.com/api/?name=E&background=2980B9&color=fff&size=128",
+    description: "Power Systems"
   },
   {
     id: 6,
-    name: "SmartAgri Tech",
-    logoUrl: "https://ui-avatars.com/api/?name=SmartAgri&background=2ECC71&color=fff&size=128",
-    description: "Agricultural technology"
+    name: "Rishabh COE",
+    logoUrl: "https://ui-avatars.com/api/?name=Rishabh&background=2ECC71&color=fff&size=128",
+    description: "Center of Excellence"
   },
   {
     id: 7,
-    name: "NeuralNet Systems",
-    logoUrl: "https://ui-avatars.com/api/?name=NeuralNet&background=C0392B&color=fff&size=128",
-    description: "Deep learning platforms"
+    name: "AyurTech",
+    logoUrl: "https://ui-avatars.com/api/?name=Ayur&background=C0392B&color=fff&size=128",
+    description: "Health Technology"
   },
   {
     id: 8,
-    name: "CleanWater Innovations",
-    logoUrl: "https://ui-avatars.com/api/?name=CleanWater&background=16A085&color=fff&size=128",
-    description: "Water purification technology"
+    name: "Srijan",
+    logoUrl: "https://ui-avatars.com/api/?name=Srijan&background=16A085&color=fff&size=128",
+    description: "Generative AI"
   }
 ];
 

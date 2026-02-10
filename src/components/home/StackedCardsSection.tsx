@@ -29,9 +29,9 @@ const storySlides: StorySlide[] = [
   {
     id: 2,
     icon: <Users className="h-12 w-12" />,
-    title: "Startup Ecosystem",
-    subtitle: "Nurturing entrepreneurs and innovative minds",
-    description: "Comprehensive incubation programs, mentorship networks, and funding opportunities that transform innovative ideas into successful startup ventures with global potential. We create an environment where entrepreneurship thrives.",
+    title: "Collaborative Research",
+    subtitle: "Bringing academia and industry together",
+    description: "Creating a seamless interface between academic expertise and industrial requirements. We facilitate joint research programs where faculty and industry experts co-develop solutions for real-world challenges.",
     accent: "from-blue-500 to-indigo-600",
     backgroundPattern: "bg-blue-50"
   },
@@ -40,7 +40,7 @@ const storySlides: StorySlide[] = [
     icon: <Lightbulb className="h-12 w-12" />,
     title: "Research Excellence",
     subtitle: "Pioneering discoveries that shape the future",
-    description: "Groundbreaking research initiatives across AI, IoT, renewable energy, and sustainable technologies that create meaningful impact and drive technological advancement. Our research today becomes tomorrow's reality.",
+    description: "Groundbreaking research initiatives across AI, IoT, renewable energy, and sustainable technologies causing meaningful impact. Focus on deep-tech areas to solve critical national and global problems.",
     accent: "from-purple-500 to-violet-600",
     backgroundPattern: "bg-purple-50"
   },
@@ -48,26 +48,26 @@ const storySlides: StorySlide[] = [
     id: 4,
     icon: <Target className="h-12 w-12" />,
     title: "Industry Partnerships",
-    subtitle: "Bridging academia and industry innovation",
-    description: "Strategic collaborations with leading corporations and government agencies to translate research innovations into real-world solutions and market applications. We connect academic excellence with industry needs.",
+    subtitle: "Strategic alliances for tangible impact",
+    description: "Strategic collaborators like RSA, Saanjh.AI, and Luit Renewable are already onboarded. We offer industry-focused research centers, consulting opportunities, and sabbaticals to drive innovation.",
     accent: "from-orange-500 to-red-500",
     backgroundPattern: "bg-orange-50"
   },
   {
     id: 5,
     icon: <Zap className="h-12 w-12" />,
-    title: "Technology Transfer",
-    subtitle: "Accelerating innovation from lab to market",
-    description: "Streamlined processes for intellectual property management, technology commercialization, and startup formation that accelerate the journey from lab to market. We make innovation accessible and impactful.",
+    title: "IP & Tech Transfer",
+    subtitle: "Commercializing research innovations",
+    description: "Streamlined policies for revenue sharing, intellectual property management, and technology transfer. We ensure that research outcomes are effectively translated into market-ready technologies.",
     accent: "from-teal-500 to-cyan-600",
     backgroundPattern: "bg-teal-50"
   },
   {
     id: 6,
     icon: <Globe className="h-12 w-12" />,
-    title: "Global Impact",
-    subtitle: "Creating worldwide technological advancement",
-    description: "International collaborations and partnerships that extend our research impact globally, contributing to technological advancement and sustainable development worldwide. Our local innovations create global solutions.",
+    title: "Regional & Global Impact",
+    subtitle: "Solutions for local needs and global markets",
+    description: "Developing projects aligned with local data needs like Agri-tech and rural healthcare, while building partnerships with global corporations to create remote R&D hubs.",
     accent: "from-rose-500 to-pink-600",
     backgroundPattern: "bg-rose-50"
   }

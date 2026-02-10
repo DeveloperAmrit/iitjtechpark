@@ -61,7 +61,7 @@ const GlobalImpactSection: React.FC = () => {
               Building a Greener, Smarter Tomorrow
             </h3>
             <p className="text-gray-600 mb-6">
-              From deploying renewables to energy efficiency, we work towards enabling India&apos;s transition to a net-zero future.
+              Research centers like the Rishabh Center for Research and Innovation in Clean Energy are driving advancements in renewable energy and sustainable development.
             </p>
             <a
               href="#"
@@ -81,10 +81,10 @@ const GlobalImpactSection: React.FC = () => {
              className="lg:w-1/2 text-left lg:pr-8"
           >
             <h3 className="text-2xl font-semibold text-gray-900 mb-4">
-              Innovation That Includes Everyone
+              Innovation with Local Impact
             </h3>
             <p className="text-gray-600 mb-6">
-              Scaling affordable, inclusive tech solutions that empower persons with disabilities and the elderly – all designed and built in India.
+              Developing projects aligned with local needs such as AI applications in rural healthcare and Agri-tech, directly benefitting the community and region.
             </p>
             <a
               href="#"

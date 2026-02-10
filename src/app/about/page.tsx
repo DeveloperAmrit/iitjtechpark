@@ -10,38 +10,38 @@ import { CircuitBoardHero, TimelineNode, FloatingHexagon, TechGrid, DataFlow } f
 const timelineEvents = [
   {
     year: 'Vision',
-    title: 'Nucleating New Age Ventures',
-    description: "IIT Jodhpur is setting up an Incubation Centre and Technology Park to nucleate a cluster of new age ventures. The focal theme is AIOT – Artificial Intelligence of Things, where the convergence of AI, IOT, and 5G is ushering in a new era of technology expected to impact all sectors of the economy.",
+    title: 'Integrated Ecosystem',
+    description: "To establish a world-class ecosystem that seamlessly integrates academia and industry, driving innovation to address real-world challenges.",
   },
   {
-    year: 'Talent',
-    title: 'Integrated Entrepreneurial Immersion',
-    description: "IITJ runs relevant B.Tech (EE, CSE) and M.Tech. programmes (Sensors and IOT, Cyber Physical System, Artificial Intelligence) with integrated entrepreneurial immersion opportunities, providing a talented pool of trained manpower for enterprises in the tech park.",
+    year: 'Goal',
+    title: 'Research Hub',
+    description: "The IIT Jodhpur Research Park will be a hub for cutting-edge and interdisciplinary research, fostering strong academia-industry partnerships to co-develop solutions aligned with national priorities.",
   },
   {
-    year: 'R&D Hub',
-    title: 'Common Research & Technology Hub',
-    description: "A core facility providing access to hardware and software facilities for end-to-end research, prototype development, and pilot production of products for the AIOT space. This includes Electronic Fab, Fabless design facilities, and testing/production facilities for IOT devices.",
+    year: 'Industry',
+    title: 'Benefits to Industry',
+    description: "Create industry-focused research centers, develop joint research and co-innovation programs, and establish Research Park Consortiums in targeted areas.",
   },
   {
-    year: 'Collab',
-    title: 'Industry-Academia Interface',
-    description: "Providing a robust interface for industries to collaborate with faculty and students of IITJ and other research and academic organisations in the country and Jodhpur in particular.",
+    year: 'Institute',
+    title: 'Benefits to IITJ Ecosystem',
+    description: "Revenue sharing, IP and technology transfer policies, research grants, fellowships, consulting opportunities, and industry sabbaticals.",
   },
   {
-    year: 'Support',
-    title: 'Mentorship & Investment',
-    description: "Enabling a vital interface for mentors and investors, including government agencies, angel investors, and venture capitalists, to work closely with MSMEs and start-ups.",
+    year: 'Local',
+    title: 'Regional Impact',
+    description: "Develop projects aligned with local needs (e.g., AI, Agri-tech, rural healthcare) and build partnerships with corporations to create R&D hubs remotely.",
   },
   {
-    year: 'Infra',
-    title: '100 Acres of Innovation',
-    description: "The TECH-PARK on AIOT is coming up over a space of 100 acres, well connected with the airport and all basic amenities. It is designed to host at least 30 companies at a time, with the research facility of IIT Jodhpur as an integral resource.",
+    year: 'Research',
+    title: 'Research Ecosystem',
+    description: "Comprising diverse Schools, Departments for cutting-edge research, and Interdisciplinary Centers fostering innovation.",
   },
   {
-    year: 'Growth',
-    title: 'Why Jodhpur?',
-    description: "Jodhpur is poised to become a specialized growth centre for AIOT due to opportunities in water quality assessment, smart power management for renewables, smart infrastructure, emerging oil & gas industry, and the academic ecosystem of IITJ and AIIMS Jodhpur for healthcare innovation.",
+    year: 'Outreach',
+    title: 'Global Outreach',
+    description: "Actively promote the park at conferences and industry expos, and facilitate institutional visits to drive collaboration.",
   },
 ];
 
@@ -74,7 +74,7 @@ export default function AboutUs() {
                 transition={{ duration: 0.6, delay: 0.1 }}
                 className="text-5xl md:text-7xl font-bold mb-8 tracking-tight text-gray-900"
               >
-                Enabling Innovation Ecosystem: <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-600 to-red-600">AIOT FAB</span>
+                Enabling Research Ecosystem: <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-600 to-red-600">Technology Park</span>
               </motion.h1>
 
               <motion.div 
@@ -86,10 +86,10 @@ export default function AboutUs() {
                 <div className="absolute -inset-1 bg-gradient-to-r from-orange-100 to-red-50 rounded-2xl blur opacity-30"></div>
                 <div className="relative bg-white/50 backdrop-blur-sm border border-orange-100 rounded-xl p-8 md:p-10 shadow-sm max-w-4xl mx-auto">
                     <p className="text-xl md:text-2xl text-gray-700 mb-6 leading-relaxed font-light">
-                        IIT Jodhpur is setting up an Incubation Centre and Technology Park in its campus to nucleate a cluster of new age ventures. The focal theme for the Technology Park is <span className="font-semibold text-gray-900">AIOT – Artificial Intelligence of Things</span>.
+                        The IIT Jodhpur Research Park will be a hub for cutting-edge and interdisciplinary research, fostering strong academia-industry partnerships to co-develop solutions aligned with national priorities.
                     </p>
                     <p className="text-lg md:text-xl text-gray-600 leading-relaxed text-balance">
-                        Technology Park under the aegis of an independent section-8 company managed by IIT Jodhpur with the financial and technical support of relevant stake-holders (Government Agencies, Angel and Venture Investors, Technology Providers).
+                        Managed by IIT Jodhpur, the Technology Park serves as an interface for industries to collaborate with faculty and students, providing access to state-of-the-art research facilities and infrastructure.
                     </p>
                 </div>
               </motion.div>

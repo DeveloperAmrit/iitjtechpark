@@ -37,12 +37,12 @@ const Footer = () => {
   ];
 
   const services = [
-    'Startup Incubation',
+    'Industry Collaboration',
     'Research & Development',
     'Technology Transfer',
-    'Industry Collaboration',
-    'Innovation Support',
-    'Mentorship Programs'
+    'Consulting Services',
+    'Research Centers',
+    'Infrastructure Access'
   ];
 
   return (
